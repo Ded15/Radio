@@ -16,6 +16,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void maximumWave() { // максимально допустимое
         Radio cond = new Radio();
@@ -27,6 +28,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void minimumWave() { // минимально допустимое
         Radio cond = new Radio();
@@ -64,6 +66,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void maximumSound() { //увеличение звука до максимума
         Radio cond = new Radio();
