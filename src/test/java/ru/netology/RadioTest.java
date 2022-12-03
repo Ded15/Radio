@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void switchingRadioStations() { 
+    public void switchingRadioStations() {
         Radio cond = new Radio();
         cond.setRadioStationNumber(7);
 
