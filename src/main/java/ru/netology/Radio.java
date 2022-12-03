@@ -1,39 +1,73 @@
 package ru.netology;
 
 public class Radio {
-    public int radioStationNumber; //переключение волны на радио
-    public int currentAudioVolume; //объём звука
+    private int radioStationNumber; //переключение волны на радио
+    private int currentAudioVolume; //объём звука
 
     public int getRadioStationNumber() {
         return radioStationNumber;
     }
 
+    public void setRadioStationNumber(int radioStationNumber) {
+        if (radioStationNumber < 0) {
+            return;
+        }
+        if (radioStationNumber > 9) {
+            return;
+        }
+        this.radioStationNumber = radioStationNumber;
+    }
+
+
     public int getVolume() {
+
         return currentAudioVolume;
     }
 
-    public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber < 0) {
-            newRadioStationNumber = 9 - 1;
-        }
-        if (newRadioStationNumber < 9) {
-            newRadioStationNumber = newRadioStationNumber + 1;
-        } else {
-            newRadioStationNumber = 0;
-        }
-        radioStationNumber = newRadioStationNumber;
-    }
-
-    public void setVolume(int newVolume) {
-        if (newVolume <= 0) {
+    public void setCurrentAudioVolume(int currentAudioVolume) {
+        if (currentAudioVolume < 0) {
             return;
         }
-        if (newVolume < 10) {
-            newVolume = newVolume + 1;
+        if (currentAudioVolume > 10) {
+            return;
+        }
+        this.currentAudioVolume = currentAudioVolume;
+    }
+
+    public void prev() {
+        if (radioStationNumber > 0) {
+            radioStationNumber--;
         } else {
-            newVolume = 10;
+            radioStationNumber = 9;
+
+        }
+    }
+
+    public void next() {
+        if (radioStationNumber < 9) {
+            radioStationNumber++;
+        } else {
+            radioStationNumber = 0;
         }
 
-        currentAudioVolume = newVolume;
+    }
+
+    public void increaseTheVolume() {
+        if (currentAudioVolume < 10) {
+            currentAudioVolume++;
+        } else {
+            currentAudioVolume = 10;
+        }
+    }
+
+    public void volumeReduction() {
+        if (currentAudioVolume > 0) {
+            currentAudioVolume--;
+        } else {
+            currentAudioVolume = 0;
+        }
     }
 }
+
+
+
